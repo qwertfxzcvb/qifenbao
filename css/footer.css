@@ -1,0 +1,23 @@
+footer {
+    background: black;
+    border-top: 1px solid #dee2e6;
+}
+footer a {
+    text-decoration: none;
+    color: 	black;
+}
+
+footer a:link {
+    text-decoration: none;
+    color: 	black;
+}
+
+footer a:visited {
+    text-decoration: none;
+    color: 	black;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #696969;
+}

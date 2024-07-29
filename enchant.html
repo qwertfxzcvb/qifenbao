@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QFB Server</title>
+    <link rel="Shortcut Icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="animate/animate.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/shadowbutton.css">
+    <link rel="stylesheet" href="css/btnbox.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <style>
+        body {
+            background-image: url('images/enchantbackground.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #333;
+        }
+        .calculator-container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .calculator-container h2 {
+            color: #333;
+        }
+        .calculator-container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .calculator-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .calculator-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .calculator-container button:hover {
+            background-color: #0056b3;
+        }
+        .calculator-container #output {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-light py-3 mb-4">
+        <div class="container text-center">
+            <h1 class="animate__animated animate__fadeIn"><b>Minecraft QFB Server</b></h1>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <button>
+                            <span class="btnbox">
+                                <a class="nav-link" href="index">首页</a>
+                            </span>
+                        </button>
+                        <button>
+                            <span class="btnbox">
+                                <a class="nav-link" href="rules">服务器规则</a>
+                            </span>
+                        </button>
+                        <button>
+                            <span class="btnbox">
+                                <a class="nav-link" target="_blank" href="https://www.yuque.com/qwertfxzcvb/qfb">文档教程</a>
+                            </span>
+                        </button>
+                        <button>
+                            <span class="btnbox">
+                                <a class="nav-link" target="_blank" href="https://data.qfb.ink/">资源下载</a>
+                            </span>
+                        </button>
+                        <button>
+                            <span class="btnbox">
+                                <a class="nav-link" target="_blank" href="https://www.mcbbs.show/">QFB论坛</a>
+                            </span>
+                        </button>
+                        <button>
+                            <span class="btnbox">
+                                <a class="nav-link" href="enchant">定制计算</a>
+                            </span>
+                        </button>
+                        <button>
+                            <span class="btnbox">
+                                <a class="nav-link" target="_blank" href="https://img.qfb.ink/">皮肤图床</a>
+                            </span>
+                        </button>
+                        <button>
+                            <span class="btnbox">
+                                <a class="nav-link" target="_blank" href="https://banlist.qfb.ink/">封禁列表</a>
+                            </span>
+                        </button>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container"><br><br>
+        <div class="calculator-container">
+            <h2 class="text-center my-4">定制计算器</h2>
+            <script>
+                function calculateCost() {
+                var inputStr = document.getElementById("enchantInput").value;
+                var prices = {
+                    "水下速掘": 0.92,
+                    "节肢杀手": 0.62,
+                    "爆炸保护": 1.04,
+                    "绑定诅咒": 319,
+                    "消失诅咒": 0.43,
+                    "深海探索者": 1.23,
+                    "效率": 1.30,
+                    "摔落保护": 0.99,
+                    "摔落缓冲": 0.99,
+                    "火焰附加": 0.82,
+                    "火焰保护": 1.07,
+                    "火矢": 1.64,
+                    "时运": 5,
+                    "冰霜行者": 2.26,
+                    "无限": 3.5,
+                    "击退": 0.69,
+                    "抢夺": 1.74,
+                    "海之眷顾": 1.46,
+                    "饵钓": 0.72,
+                    "经验修补": 4.5,
+                    "力量": 1.15,
+                    "弹射物保护": 0.99,
+                    "保护": 1.03,
+                    "冲击": 1.23,
+                    "水下呼吸": 1.51,
+                    "锋利": 2.00,
+                    "精准采集": 1.64,
+                    "亡灵杀手": 0.62,
+                    "横扫之刃": 0.72,
+                    "荆棘": 1.45,
+                    "最大生命加": 2.00,
+                    "最大生命": 2.00,
+                    "最大生命值": 2.00,
+                    "生命": 2.00,
+                    "生命值": 2.00,
+                    "耐久": 0.50,
+                    "快速装填": 2.00,
+                    "速度": 1.00,
+                };
+
+                var quantities = {};
+                for (var enchant in prices) {
+                    quantities[enchant] = 0;
+                }
+
+                var enchants = inputStr.split(" ");
+                enchants.forEach(function (enchantStr) {
+                    for (var enchant in prices) {
+                    if (enchantStr.includes(enchant)) {
+                        quantities[enchant] = parseInt(enchantStr.split(enchant)[1]);
+                    }
+                    }
+                });
+
+                var outputInfo = "";
+                var totalCost = 0;
+
+                for (var enchant in quantities) {
+                    var quantity = quantities[enchant];
+                    if (quantity > 0) {
+                    var enchantPrice = prices[enchant];
+                    var enchantTotalPrice = quantity * enchantPrice;
+                    outputInfo += enchant + quantity + "级，" + enchantTotalPrice + "元 (每级" + enchantPrice + "元)<br>";
+                    totalCost += enchantTotalPrice;
+                    }
+                }
+
+                var taxRate = 0.2;
+                var totalCostWithTax = totalCost * (1 + taxRate);
+                outputInfo += "税率20%，税额" + (totalCost * taxRate).toFixed(2) + "元<br>";
+                outputInfo += "合计" + totalCostWithTax.toFixed(2) + "元";
+
+                document.getElementById("output").innerHTML = outputInfo;
+                }
+            </script>
+            <br>
+            <label for="enchantInput">输入购买的附魔及数量（例：锋利10 经验修补1）</label>
+            <input type="text" id="enchantInput" size="50">
+            <button onclick="calculateCost()">计算</button>
+            <div id="output"></div>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </section>
+
+    <footer class="bg-light py-3">
+        <div class="container text-center">
+            <div class="container">
+                <br>
+                <a target="_blank" href="https://space.bilibili.com/506232474"><i class="fa-brands fa-bilibili fa-2x"></i></a>
+                <a target="_blank" href="https://qm.qq.com/q/yU5SP04RsA"><i class="fa-brands fa-qq fa-2x"></i></a>
+                <a target="_blank" href="https://t.me/+xpY812UzHPs5NDk0"><i class="fa-brands fa-telegram fa-2x"></i></a>
+                <a target="_blank" href="https://discord.gg/erbGNc2F"><i class="fa-brands fa-discord fa-2x"></i></a>
+                <br><br>
+            </div>
+            <p>Copyright © 2024 qifenbao.net All Rights Reserved.</p>
+            <a href="https://www.qfb.ink/payterms.html" target="_blank">服务条款</a><br><br>
+            <div>
+                <a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备2023037463号-2</a><br>
+            </div>
+        </div>
+    </footer>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/0cf1f78685.js" crossorigin="anonymous"></script>
+    <script src="js/carousel.js"></script>
+</body>
+</html>

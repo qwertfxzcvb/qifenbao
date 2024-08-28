@@ -94,7 +94,7 @@
                         </button>
                         <button>
                             <span class="btnbox">
-                                <a class="nav-link" target="_blank" href="https://data.qfb.ink/">资源下载</a>
+                                <a class="nav-link" href="download">资源下载</a>
                             </span>
                         </button>
                         <button>
@@ -130,23 +130,23 @@
                 function calculateCost() {
                 var inputStr = document.getElementById("enchantInput").value;
                 var prices = {
-                    "水下速掘": 0.92,
-                    "节肢杀手": 0.62,
+                    "水下速掘": 1.92,
+                    "节肢杀手": 1.62,
                     "爆炸保护": 1.04,
                     "绑定诅咒": 319,
                     "消失诅咒": 0.43,
                     "深海探索者": 1.23,
-                    "效率": 1.30,
+                    "效率": 3.30,
                     "摔落保护": 0.99,
                     "摔落缓冲": 0.99,
                     "火焰附加": 0.82,
                     "火焰保护": 1.07,
                     "火矢": 1.64,
-                    "时运": 5,
+                    "时运": 7,
                     "冰霜行者": 2.26,
                     "无限": 3.5,
-                    "击退": 0.69,
-                    "抢夺": 1.74,
+                    "击退": 1.69,
+                    "抢夺": 2.74,
                     "海之眷顾": 1.46,
                     "饵钓": 0.72,
                     "经验修补": 4.5,
@@ -155,16 +155,16 @@
                     "保护": 1.03,
                     "冲击": 1.23,
                     "水下呼吸": 1.51,
-                    "锋利": 2.00,
+                    "锋利": 3.00,
                     "精准采集": 1.64,
-                    "亡灵杀手": 0.62,
+                    "亡灵杀手": 1.62,
                     "横扫之刃": 0.72,
-                    "荆棘": 1.45,
-                    "最大生命加": 2.00,
-                    "最大生命": 2.00,
-                    "最大生命值": 2.00,
-                    "生命": 2.00,
-                    "生命值": 2.00,
+                    "荆棘": 2.45,
+                    "最大生命加": 5.00,
+                    "最大生命": 5.00,
+                    "最大生命值": 5.00,
+                    "生命": 5.00,
+                    "生命值": 5.00,
                     "耐久": 0.50,
                     "快速装填": 2.00,
                     "速度": 1.00,
@@ -199,16 +199,16 @@
 
                 var taxRate = 0.2;
                 var totalCostWithTax = totalCost * (1 + taxRate);
-                outputInfo += "税率20%，税额" + (totalCost * taxRate).toFixed(2) + "元<br>";
+                outputInfo += "税率20%，税额" + (totalCost * taxRate).toFixed(2) + "元  (此为系统自动扣除，不可能不交)<br>";
                 outputInfo += "合计" + totalCostWithTax.toFixed(2) + "元";
 
                 document.getElementById("output").innerHTML = outputInfo;
                 }
             </script>
             <br>
-            <label for="enchantInput">输入购买的附魔及数量（例：锋利10 经验修补1）</label>
+            <label for="enchantInput">输入购买的附魔及数量（例：锋利10 经验修补1）<a target="_blank" href="images/enchantprice.png" >查看所有附魔/属性的价格 </a></label>
             <input type="text" id="enchantInput" size="50">
-            <button onclick="calculateCost()">计算</button>
+            <button onclick="calculateCost()">计算</button><br>
             <div id="output"></div>
         </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>

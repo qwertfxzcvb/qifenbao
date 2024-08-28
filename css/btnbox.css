@@ -11,7 +11,7 @@
   margin: 0 0px;
   background: transparent;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 900;  
 }
 
 .btnbox:before {
@@ -49,6 +49,7 @@
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .3s;
+  pointer-events: none;      
 }
 
 .btnbox:hover:after {
@@ -56,6 +57,7 @@
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .5s;
+  pointer-events: none;      
 }
 
 button {

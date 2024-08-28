@@ -1,2 +1,2 @@
 # qifenbao
-qfb web
+qfb server
